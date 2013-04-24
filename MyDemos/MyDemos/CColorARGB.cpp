@@ -41,12 +41,16 @@ CColorARGB& CColorARGB::operator=(const CColorARGB& rhs) {
     return *this;
 }
 
-bool areTwoColorsSimilar(const CColorARGB& lhs, const CColorARGB& rhs, uint threshold) {
-    int delta =
-        abs(lhs._r - rhs._r) * 299 +
-        abs(lhs._g - rhs._g) * 587 +
-        abs(lhs._b - rhs._b) * 114;
+uint compareTwoColors(const CColorARGB& lhs, const CColorARGB& rhs) {
+    uint delta =
+    abs(lhs._r - rhs._r) * 299 +
+    abs(lhs._g - rhs._g) * 587 +
+    abs(lhs._b - rhs._b) * 114;
     
-    int newThreshold = threshold;
-    return (delta < newThreshold);
+    return delta;
+}
+
+bool areTwoColorsSimilar(const CColorARGB& lhs, const CColorARGB& rhs, uint threshold) {
+    uint delta = compareTwoColors(lhs, rhs);
+    return (delta < threshold);
 }

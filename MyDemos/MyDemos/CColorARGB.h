@@ -24,10 +24,11 @@ public:
     CColorARGB& operator=(const CColorARGB& rhs);
 };
 
-
 /**
- *	@param 	threshold 	0 - 255000
+ *	@brief threshold 	0 - 255000
  */
+extern uint compareTwoColors(const CColorARGB& lhs, const CColorARGB& rhs);
 extern bool areTwoColorsSimilar(const CColorARGB& lhs, const CColorARGB& rhs, uint threshold);
+
 
 #endif /* defined(__MyDemos__CColorARGB__) */
