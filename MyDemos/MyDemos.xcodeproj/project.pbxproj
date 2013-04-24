@@ -19,6 +19,13 @@
 		7F53A11617262A1800B89A5B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A11517262A1800B89A5B /* Default-568h@2x.png */; };
 		7F53A11917262A1800B89A5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A11717262A1800B89A5B /* MainStoryboard.storyboard */; };
 		7F53A11C17262A1800B89A5B /* CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A11B17262A1800B89A5B /* CLViewController.m */; };
+		7F53A12617262E3700B89A5B /* CL1ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A12517262E3700B89A5B /* CL1ViewController.mm */; };
+		7F53A12917262EEC00B89A5B /* pin_content.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A12817262EEC00B89A5B /* pin_content.png */; };
+		7F53A12C17262EF600B89A5B /* demo01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A12A17262EF600B89A5B /* demo01.jpg */; };
+		7F53A12D17262EF600B89A5B /* demo02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A12B17262EF600B89A5B /* demo02.jpg */; };
+		7F53A12F17262FB700B89A5B /* demo03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A12E17262FB700B89A5B /* demo03.jpg */; };
+		7F53A135172636BD00B89A5B /* CColorARGB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A133172636BD00B89A5B /* CColorARGB.cpp */; };
+		7F53A13B1726675300B89A5B /* UIImage+RawData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A13A1726675300B89A5B /* UIImage+RawData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,16 @@
 		7F53A11817262A1800B89A5B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7F53A11A17262A1800B89A5B /* CLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLViewController.h; sourceTree = "<group>"; };
 		7F53A11B17262A1800B89A5B /* CLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLViewController.m; sourceTree = "<group>"; };
+		7F53A12417262E3700B89A5B /* CL1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CL1ViewController.h; sourceTree = "<group>"; };
+		7F53A12517262E3700B89A5B /* CL1ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CL1ViewController.mm; sourceTree = "<group>"; };
+		7F53A12817262EEC00B89A5B /* pin_content.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_content.png; sourceTree = "<group>"; };
+		7F53A12A17262EF600B89A5B /* demo01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo01.jpg; sourceTree = "<group>"; };
+		7F53A12B17262EF600B89A5B /* demo02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo02.jpg; sourceTree = "<group>"; };
+		7F53A12E17262FB700B89A5B /* demo03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo03.jpg; sourceTree = "<group>"; };
+		7F53A133172636BD00B89A5B /* CColorARGB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CColorARGB.cpp; sourceTree = "<group>"; };
+		7F53A134172636BD00B89A5B /* CColorARGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CColorARGB.h; sourceTree = "<group>"; };
+		7F53A1391726675300B89A5B /* UIImage+RawData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RawData.h"; sourceTree = "<group>"; };
+		7F53A13A1726675300B89A5B /* UIImage+RawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RawData.m"; sourceTree = "<group>"; };
 		DB04CBC672094599B3E59974 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -89,6 +106,9 @@
 		7F53A10517262A1800B89A5B /* MyDemos */ = {
 			isa = PBXGroup;
 			children = (
+				7F53A12717262EDF00B89A5B /* resource */,
+				7F53A11717262A1800B89A5B /* MainStoryboard.storyboard */,
+				7F53A12317262E1100B89A5B /* 1 - ColorARGB */,
 				7F53A12217262C8F00B89A5B /* Org */,
 				7F53A10617262A1800B89A5B /* Supporting Files */,
 			);
@@ -114,11 +134,34 @@
 			children = (
 				7F53A10E17262A1800B89A5B /* CLAppDelegate.h */,
 				7F53A10F17262A1800B89A5B /* CLAppDelegate.m */,
-				7F53A11717262A1800B89A5B /* MainStoryboard.storyboard */,
 				7F53A11A17262A1800B89A5B /* CLViewController.h */,
 				7F53A11B17262A1800B89A5B /* CLViewController.m */,
 			);
 			name = Org;
+			sourceTree = "<group>";
+		};
+		7F53A12317262E1100B89A5B /* 1 - ColorARGB */ = {
+			isa = PBXGroup;
+			children = (
+				7F53A1391726675300B89A5B /* UIImage+RawData.h */,
+				7F53A13A1726675300B89A5B /* UIImage+RawData.m */,
+				7F53A12417262E3700B89A5B /* CL1ViewController.h */,
+				7F53A12517262E3700B89A5B /* CL1ViewController.mm */,
+				7F53A134172636BD00B89A5B /* CColorARGB.h */,
+				7F53A133172636BD00B89A5B /* CColorARGB.cpp */,
+			);
+			name = "1 - ColorARGB";
+			sourceTree = "<group>";
+		};
+		7F53A12717262EDF00B89A5B /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				7F53A12A17262EF600B89A5B /* demo01.jpg */,
+				7F53A12B17262EF600B89A5B /* demo02.jpg */,
+				7F53A12E17262FB700B89A5B /* demo03.jpg */,
+				7F53A12817262EEC00B89A5B /* pin_content.png */,
+			);
+			name = resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +223,10 @@
 				7F53A11417262A1800B89A5B /* Default@2x.png in Resources */,
 				7F53A11617262A1800B89A5B /* Default-568h@2x.png in Resources */,
 				7F53A11917262A1800B89A5B /* MainStoryboard.storyboard in Resources */,
+				7F53A12917262EEC00B89A5B /* pin_content.png in Resources */,
+				7F53A12C17262EF600B89A5B /* demo01.jpg in Resources */,
+				7F53A12D17262EF600B89A5B /* demo02.jpg in Resources */,
+				7F53A12F17262FB700B89A5B /* demo03.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +271,9 @@
 				7F53A10C17262A1800B89A5B /* main.m in Sources */,
 				7F53A11017262A1800B89A5B /* CLAppDelegate.m in Sources */,
 				7F53A11C17262A1800B89A5B /* CLViewController.m in Sources */,
+				7F53A12617262E3700B89A5B /* CL1ViewController.mm in Sources */,
+				7F53A135172636BD00B89A5B /* CColorARGB.cpp in Sources */,
+				7F53A13B1726675300B89A5B /* UIImage+RawData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +362,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyDemos/MyDemos-Prefix.pch";
 				INFOPLIST_FILE = "MyDemos/MyDemos-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -324,6 +375,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyDemos/MyDemos-Prefix.pch";
 				INFOPLIST_FILE = "MyDemos/MyDemos-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
