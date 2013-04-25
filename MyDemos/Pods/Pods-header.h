@@ -2,3 +2,4 @@
 #define __COCOA_PODS
 
 #define __POD_CocoaLumberjack
+#define __POD_UIColor_Utilities

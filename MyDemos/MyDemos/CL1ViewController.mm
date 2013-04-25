@@ -10,7 +10,9 @@
 #include "CColorARGB.h"
 #import "UIImage+RawData.h"
 
-const int THE_THRESHOLD = 2500;
+#import "CLPinView.h"
+
+const int THE_THRESHOLD = 10000;
 
 /**
  *	@brief	CColorPoint
@@ -99,6 +101,7 @@ const int THE_THRESHOLD = 2500;
 
 @interface CL1ViewController () {
     NSMutableArray *_regions;
+    NSMutableArray *_pinviews;
 }
 
 @end
@@ -114,6 +117,8 @@ const int THE_THRESHOLD = 2500;
     tap.numberOfTapsRequired = 1;
     self.picImageView.userInteractionEnabled = YES;
     [self.picImageView addGestureRecognizer:tap];
+    
+    _pinviews = [NSMutableArray arrayWithCapacity:10];
 }
 
 - (IBAction)btnAction:(id)sender
@@ -200,6 +205,136 @@ const int THE_THRESHOLD = 2500;
     colorPoint->_cColor = colorAtPoint;
     CColorRegion *region = [self regionForColor:colorPoint withPHead:pHead PFlagHead:pFlagHead];
     NSLog(@"%d", [region.pointsArray count]);
+}
+
+- (IBAction)btn3Action:(id)sender {
+    for (UIView *pinView in _pinviews) {
+        [pinView removeFromSuperview];
+    }
+    
+    int width = (int)self.picImageView.image.size.width;
+    int height = (int)self.picImageView.image.size.height;
+    CColorARGB pSample[] = {
+        CColorARGB(0xff, 184, 204, 228),
+        CColorARGB(0xff, 230, 184, 183),
+        CColorARGB(0xff, 255, 255, 153),
+        CColorARGB(0xff, 204, 255, 153),
+        CColorARGB(0xff, 51, 51, 204),
+        
+        CColorARGB(0xff, 102, 153, 0),
+        CColorARGB(0xff, 204, 0, 0),
+        CColorARGB(0xff, 255, 255, 0),
+        CColorARGB(0xff, 204, 0, 102),
+        CColorARGB(0xff, 226, 107, 10),
+        
+        CColorARGB(0xff, 153, 51, 255),
+        CColorARGB(0xff, 102, 153, 255),
+        CColorARGB(0xff, 238, 236, 225),
+        CColorARGB(0xff, 255, 255, 255),
+        CColorARGB(0xff, 207, 207, 207),
+        
+        CColorARGB(0xff, 89, 89, 89),
+        CColorARGB(0xff, 0, 0, 0),
+        CColorARGB(0xff, 122, 122, 122),
+        CColorARGB(0xff, 0, 32, 96),
+        CColorARGB(0xff, 0, 102, 0),
+        
+        CColorARGB(0xff, 204, 102, 0),
+        CColorARGB(0xff, 204, 0, 255),
+        CColorARGB(0xff, 153, 0, 0),
+    };
+    int sampleSize = sizeof(pSample)/sizeof(CColorARGB);
+    
+    NSMutableArray *sampleArray = [NSMutableArray arrayWithCapacity:sampleSize];
+    for (int i = 0; i < sampleSize; i++) {
+        CColorPoint *colorPoint = [[CColorPoint alloc] init];
+        colorPoint->_cColor = pSample[i];
+        
+        NSMutableArray *singleArray = [NSMutableArray arrayWithObject:colorPoint];
+        [sampleArray addObject:singleArray];
+    }
+    
+    
+    CColorARGB  *pHead = (CColorARGB *)[[self.picImageView.image rawImageData] bytes];
+    for (int i = 0; i < width*height; i+=10) {
+        CColorARGB currentColor = *(pHead + i);
+        int row = i/width;
+        int col = i%width;
+        
+        for (int j = 0; j < sampleSize; j++) {
+            if (areTwoColorsSimilar(pSample[j], currentColor, THE_THRESHOLD)) {
+                CColorPoint *colorPoint = [[CColorPoint alloc] init];
+                colorPoint->_x = col;
+                colorPoint->_y = row;
+                colorPoint->_cColor = currentColor;
+                NSMutableArray *arr = [sampleArray objectAtIndex:j];
+                [arr addObject:colorPoint];
+                break;
+            }
+        }
+    }
+    
+    [sampleArray sortWithOptions:NSSortStable usingComparator:^NSComparisonResult(id obj1, id obj2) {
+        int c1 = [(NSArray *)obj1 count];
+        int c2 = [(NSArray *)obj2 count];
+        if (c1 < c2) return NSOrderedAscending;
+        if (c1 > c2) return NSOrderedDescending;
+        
+        return NSOrderedSame;
+    }];
+    
+    for (int i = 0; i < 10; i++) {
+        NSArray *singleArray = [sampleArray lastObject];
+        [sampleArray removeLastObject];
+        
+        if ([singleArray count] > 200) {
+            CColorPoint *p = [singleArray objectAtIndex:[singleArray count]/2];
+            NSLog(@"%d, %d", p->_x, p->_y);
+            
+            
+            
+            CGPoint point = [self changeFromX:p->_x andY:p->_y];
+            CLPinView *pinview = [[[NSBundle mainBundle] loadNibNamed:@"CLPinView" owner:self options:nil] lastObject];
+            NSLog(@"%@", NSStringFromCGRect(pinview.frame));
+            [self.picImageView addSubview:pinview];
+            pinview.selectedColorARGB = p->_cColor;
+            [pinview changeHSB];
+            
+            [pinview performSelector:@selector(showForPositionWithNSValue:) withObject:[NSValue valueWithCGPoint:point] afterDelay:[self randomDoubleFrom:0 To:1]];
+            //[pinview showForPosition:point];
+            
+//            UIView *pinview = [[UIView alloc] initWithFrame:CGRectMake(point.x, point.y, 30, 30)];
+//            
+//            CColorARGB color = p->_cColor;
+//            pinview.backgroundColor = [UIColor colorWithRed:color._r/255.f green:color._g/255.f blue:color._b/255.f alpha:color._a/255.f];
+//            
+//            [self.picImageView addSubview:pinview];
+        }
+    }
+}
+
+- (double)randomDoubleFrom:(double)aStart To:(double)aEnd {
+    double random = (double)rand() / (double)RAND_MAX;
+    double diff = aEnd - aStart;
+    return aStart + random*diff;
+}
+
+- (IBAction)btn4Action:(id)sender {
+    CLPinView *pinview = [[[NSBundle mainBundle] loadNibNamed:@"CLPinView" owner:self options:nil] lastObject];
+    NSLog(@"%@", NSStringFromCGRect(pinview.frame));
+    [self.picImageView addSubview:pinview];
+    pinview.selectedColorARGB = CColorARGB(255, 255, 0, 0);
+    [pinview changeHSB];
+    pinview.contentImageView.image = pinview.myImage;
+    pinview.contentImageView.hidden = NO;
+    
+    //[pinview showForPosition:CGPointMake(100, 50)];
+}
+
+- (CGPoint)changeFromX:(int)x andY:(int)y {
+    CGFloat nx = self.picImageView.bounds.size.width * x / self.picImageView.image.size.width;
+    CGFloat ny = self.picImageView.bounds.size.height * y / self.picImageView.image.size.height;
+    return CGPointMake(nx, ny);
 }
 
 - (void)markRegion {

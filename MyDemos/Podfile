@@ -1,4 +1,6 @@
 platform :ios, '5.1'
 
 pod 'CocoaLumberjack'
+pod 'UIColor-Utilities'
+
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		325935AFA31441A58FF2AEF8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F0D705E0AE4507A98D3533 /* libPods.a */; };
+		7F3535EC172905270085886F /* CL2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3535EB172905270085886F /* CL2ViewController.m */; };
 		7F53A10017262A1800B89A5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F53A0FF17262A1800B89A5B /* UIKit.framework */; };
 		7F53A10217262A1800B89A5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F53A10117262A1800B89A5B /* Foundation.framework */; };
 		7F53A10417262A1800B89A5B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F53A10317262A1800B89A5B /* CoreGraphics.framework */; };
@@ -20,16 +21,23 @@
 		7F53A11917262A1800B89A5B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A11717262A1800B89A5B /* MainStoryboard.storyboard */; };
 		7F53A11C17262A1800B89A5B /* CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A11B17262A1800B89A5B /* CLViewController.m */; };
 		7F53A12617262E3700B89A5B /* CL1ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A12517262E3700B89A5B /* CL1ViewController.mm */; };
-		7F53A12917262EEC00B89A5B /* pin_content.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A12817262EEC00B89A5B /* pin_content.png */; };
 		7F53A12C17262EF600B89A5B /* demo01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A12A17262EF600B89A5B /* demo01.jpg */; };
 		7F53A12D17262EF600B89A5B /* demo02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A12B17262EF600B89A5B /* demo02.jpg */; };
 		7F53A12F17262FB700B89A5B /* demo03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F53A12E17262FB700B89A5B /* demo03.jpg */; };
 		7F53A135172636BD00B89A5B /* CColorARGB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A133172636BD00B89A5B /* CColorARGB.cpp */; };
 		7F53A13B1726675300B89A5B /* UIImage+RawData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F53A13A1726675300B89A5B /* UIImage+RawData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7F5619CF17291C600056BA3C /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F5619CE17291C600056BA3C /* demo.png */; };
+		7F5619D21729238B0056BA3C /* CLPinView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7F5619D11729238B0056BA3C /* CLPinView.mm */; };
+		7F5619D4172924B50056BA3C /* CLPinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F5619D3172924B50056BA3C /* CLPinView.xib */; };
+		7F5619D71729253A0056BA3C /* pin_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F5619D51729253A0056BA3C /* pin_arrow@2x.png */; };
+		7F5619DA1729296E0056BA3C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5619D91729296E0056BA3C /* QuartzCore.framework */; };
+		7F5619DE17293BC90056BA3C /* pin_content@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F5619DD17293BC90056BA3C /* pin_content@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		75F0D705E0AE4507A98D3533 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F3535EA172905270085886F /* CL2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CL2ViewController.h; sourceTree = "<group>"; };
+		7F3535EB172905270085886F /* CL2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CL2ViewController.m; sourceTree = "<group>"; };
 		7F53A0FC17262A1800B89A5B /* MyDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F53A0FF17262A1800B89A5B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7F53A10117262A1800B89A5B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,7 +56,6 @@
 		7F53A11B17262A1800B89A5B /* CLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLViewController.m; sourceTree = "<group>"; };
 		7F53A12417262E3700B89A5B /* CL1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CL1ViewController.h; sourceTree = "<group>"; };
 		7F53A12517262E3700B89A5B /* CL1ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CL1ViewController.mm; sourceTree = "<group>"; };
-		7F53A12817262EEC00B89A5B /* pin_content.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_content.png; sourceTree = "<group>"; };
 		7F53A12A17262EF600B89A5B /* demo01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo01.jpg; sourceTree = "<group>"; };
 		7F53A12B17262EF600B89A5B /* demo02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo02.jpg; sourceTree = "<group>"; };
 		7F53A12E17262FB700B89A5B /* demo03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo03.jpg; sourceTree = "<group>"; };
@@ -56,6 +63,13 @@
 		7F53A134172636BD00B89A5B /* CColorARGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CColorARGB.h; sourceTree = "<group>"; };
 		7F53A1391726675300B89A5B /* UIImage+RawData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RawData.h"; sourceTree = "<group>"; };
 		7F53A13A1726675300B89A5B /* UIImage+RawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RawData.m"; sourceTree = "<group>"; };
+		7F5619CE17291C600056BA3C /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
+		7F5619D01729238B0056BA3C /* CLPinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPinView.h; sourceTree = "<group>"; };
+		7F5619D11729238B0056BA3C /* CLPinView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CLPinView.mm; sourceTree = "<group>"; };
+		7F5619D3172924B50056BA3C /* CLPinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLPinView.xib; sourceTree = "<group>"; };
+		7F5619D51729253A0056BA3C /* pin_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin_arrow@2x.png"; sourceTree = "<group>"; };
+		7F5619D91729296E0056BA3C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7F5619DD17293BC90056BA3C /* pin_content@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin_content@2x.png"; sourceTree = "<group>"; };
 		DB04CBC672094599B3E59974 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -64,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5619DA1729296E0056BA3C /* QuartzCore.framework in Frameworks */,
 				7F53A10017262A1800B89A5B /* UIKit.framework in Frameworks */,
 				7F53A10217262A1800B89A5B /* Foundation.framework in Frameworks */,
 				7F53A10417262A1800B89A5B /* CoreGraphics.framework in Frameworks */,
@@ -74,9 +89,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F3535E91729050C0085886F /* 2 - ColorRegion */ = {
+			isa = PBXGroup;
+			children = (
+				7F3535EA172905270085886F /* CL2ViewController.h */,
+				7F3535EB172905270085886F /* CL2ViewController.m */,
+			);
+			name = "2 - ColorRegion";
+			sourceTree = "<group>";
+		};
 		7F53A0F317262A1800B89A5B = {
 			isa = PBXGroup;
 			children = (
+				7F5619D91729296E0056BA3C /* QuartzCore.framework */,
 				7F53A10517262A1800B89A5B /* MyDemos */,
 				7F53A0FE17262A1800B89A5B /* Frameworks */,
 				7F53A0FD17262A1800B89A5B /* Products */,
@@ -108,6 +133,7 @@
 			children = (
 				7F53A12717262EDF00B89A5B /* resource */,
 				7F53A11717262A1800B89A5B /* MainStoryboard.storyboard */,
+				7F3535E91729050C0085886F /* 2 - ColorRegion */,
 				7F53A12317262E1100B89A5B /* 1 - ColorARGB */,
 				7F53A12217262C8F00B89A5B /* Org */,
 				7F53A10617262A1800B89A5B /* Supporting Files */,
@@ -149,6 +175,9 @@
 				7F53A12517262E3700B89A5B /* CL1ViewController.mm */,
 				7F53A134172636BD00B89A5B /* CColorARGB.h */,
 				7F53A133172636BD00B89A5B /* CColorARGB.cpp */,
+				7F5619D01729238B0056BA3C /* CLPinView.h */,
+				7F5619D11729238B0056BA3C /* CLPinView.mm */,
+				7F5619D3172924B50056BA3C /* CLPinView.xib */,
 			);
 			name = "1 - ColorARGB";
 			sourceTree = "<group>";
@@ -156,10 +185,12 @@
 		7F53A12717262EDF00B89A5B /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				7F5619CE17291C600056BA3C /* demo.png */,
 				7F53A12A17262EF600B89A5B /* demo01.jpg */,
 				7F53A12B17262EF600B89A5B /* demo02.jpg */,
 				7F53A12E17262FB700B89A5B /* demo03.jpg */,
-				7F53A12817262EEC00B89A5B /* pin_content.png */,
+				7F5619D51729253A0056BA3C /* pin_arrow@2x.png */,
+				7F5619DD17293BC90056BA3C /* pin_content@2x.png */,
 			);
 			name = resource;
 			sourceTree = "<group>";
@@ -223,10 +254,13 @@
 				7F53A11417262A1800B89A5B /* Default@2x.png in Resources */,
 				7F53A11617262A1800B89A5B /* Default-568h@2x.png in Resources */,
 				7F53A11917262A1800B89A5B /* MainStoryboard.storyboard in Resources */,
-				7F53A12917262EEC00B89A5B /* pin_content.png in Resources */,
 				7F53A12C17262EF600B89A5B /* demo01.jpg in Resources */,
 				7F53A12D17262EF600B89A5B /* demo02.jpg in Resources */,
 				7F53A12F17262FB700B89A5B /* demo03.jpg in Resources */,
+				7F5619CF17291C600056BA3C /* demo.png in Resources */,
+				7F5619D4172924B50056BA3C /* CLPinView.xib in Resources */,
+				7F5619D71729253A0056BA3C /* pin_arrow@2x.png in Resources */,
+				7F5619DE17293BC90056BA3C /* pin_content@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +308,8 @@
 				7F53A12617262E3700B89A5B /* CL1ViewController.mm in Sources */,
 				7F53A135172636BD00B89A5B /* CColorARGB.cpp in Sources */,
 				7F53A13B1726675300B89A5B /* UIImage+RawData.m in Sources */,
+				7F3535EC172905270085886F /* CL2ViewController.m in Sources */,
+				7F5619D21729238B0056BA3C /* CLPinView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

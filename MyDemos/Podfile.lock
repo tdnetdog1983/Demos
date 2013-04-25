@@ -1,10 +1,13 @@
 PODS:
   - CocoaLumberjack (1.6.2)
+  - UIColor-Utilities (1.0.1)
 
 DEPENDENCIES:
   - CocoaLumberjack
+  - UIColor-Utilities
 
 SPEC CHECKSUMS:
   CocoaLumberjack: d73e1e317ced14ab930797dda6c17156ff17aaa1
+  UIColor-Utilities: a392783be1b72e5d5ad9ae450ef2280239441bc8
 
 COCOAPODS: 0.18.1
