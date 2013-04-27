@@ -13,6 +13,7 @@
 #import "CLPinView.h"
 
 const int THE_THRESHOLD = 10000;
+//const int THE_THRESHOLD = 2500;
 
 /**
  *	@brief	CColorPoint
@@ -112,6 +113,7 @@ const int THE_THRESHOLD = 10000;
 
 - (void)viewDidLoad
 {
+    initDeltaArray();
     [super viewDidLoad];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)];
     tap.numberOfTapsRequired = 1;

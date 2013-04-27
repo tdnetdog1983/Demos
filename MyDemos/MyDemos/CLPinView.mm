@@ -117,7 +117,7 @@
             UInt8 *pPixelHead = pHead + (col + row*(int)image.size.width)*4;
             UInt8 a = *(pPixelHead);
             
-            if (a < 30) {
+            if (a < 60) {
                 *(pPixelHead) = 0;
                 continue;
             }

@@ -30,5 +30,6 @@ public:
 extern uint compareTwoColors(const CColorARGB& lhs, const CColorARGB& rhs);
 extern bool areTwoColorsSimilar(const CColorARGB& lhs, const CColorARGB& rhs, uint threshold);
 
+extern void initDeltaArray();
 
 #endif /* defined(__MyDemos__CColorARGB__) */

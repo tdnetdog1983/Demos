@@ -57,7 +57,7 @@
                                     <action selector="btn2Action:" destination="K0w-5i-kQc" eventType="touchUpInside" id="P7H-fg-HNj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="demo02.jpg" id="xFu-PQ-rKr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="demo03.jpg" id="xFu-PQ-rKr">
                                 <rect key="frame" x="0.0" y="260" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -151,8 +151,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="demo02.jpg" width="2560" height="1600"/>
+        <image name="demo03.jpg" width="2560" height="1600"/>
     </resources>
+    <classes>
+        <class className="CL1ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CL1ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="outputImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="outputView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="picImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="CL2ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CL2ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

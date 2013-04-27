@@ -7,6 +7,18 @@
 //
 
 #include "CColorARGB.h"
+static uint deltaR[256];
+static uint deltaG[256];
+static uint deltaB[256];
+
+void initDeltaArray() {
+    for (int i = 0; i < 256; i++) {
+        deltaR[i] = i*299;
+        deltaG[i] = i*587;
+        deltaB[i] = i*114;        
+    }
+}
+
 CColorARGB::CColorARGB() {
     _a = _r = _g = _b = 0;
 }
@@ -43,9 +55,10 @@ CColorARGB& CColorARGB::operator=(const CColorARGB& rhs) {
 
 uint compareTwoColors(const CColorARGB& lhs, const CColorARGB& rhs) {
     uint delta =
-    abs(lhs._r - rhs._r) * 299 +
-    abs(lhs._g - rhs._g) * 587 +
-    abs(lhs._b - rhs._b) * 114;
+    //abs(lhs._r - rhs._r) * 299 +
+    //abs(lhs._g - rhs._g) * 587 +
+    //abs(lhs._b - rhs._b) * 114;
+    deltaR[abs(lhs._r - rhs._r)] + deltaG[abs(lhs._g - rhs._g)] + deltaB[abs(lhs._b - rhs._b)];
     
     return delta;
 }
