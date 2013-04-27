@@ -258,7 +258,26 @@ const int THE_THRESHOLD = 10000;
     
     
     CColorARGB  *pHead = (CColorARGB *)[[self.picImageView.image rawImageData] bytes];
+    for (int row = 0; row < height; row+=10) {
+        for (int col = 0; col < width; col+=10) {
+            CColorARGB currentColor = *(pHead + row * (int)self.picImageView.image.size.width + col);
+            for (int j = 0; j < sampleSize; j++) {
+                if (areTwoColorsSimilar(pSample[j], currentColor, THE_THRESHOLD)) {
+                    CColorPoint *colorPoint = [[CColorPoint alloc] init];
+                    colorPoint->_x = col;
+                    colorPoint->_y = row;
+                    colorPoint->_cColor = currentColor;
+                    NSMutableArray *arr = [sampleArray objectAtIndex:j];
+                    [arr addObject:colorPoint];
+                    break;
+                }
+            }
+        }
+    }
+
+    /*/
     for (int i = 0; i < width*height; i+=10) {
+        
         CColorARGB currentColor = *(pHead + i);
         int row = i/width;
         int col = i%width;
@@ -275,7 +294,7 @@ const int THE_THRESHOLD = 10000;
             }
         }
     }
-    
+    //*/
     [sampleArray sortWithOptions:NSSortStable usingComparator:^NSComparisonResult(id obj1, id obj2) {
         int c1 = [(NSArray *)obj1 count];
         int c2 = [(NSArray *)obj2 count];
