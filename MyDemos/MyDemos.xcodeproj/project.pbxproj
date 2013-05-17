@@ -89,13 +89,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7F3535E91729050C0085886F /* 2 - ColorRegion */ = {
+		7F3535E91729050C0085886F /* 2 - DealWithImage */ = {
 			isa = PBXGroup;
 			children = (
 				7F3535EA172905270085886F /* CL2ViewController.h */,
 				7F3535EB172905270085886F /* CL2ViewController.m */,
 			);
-			name = "2 - ColorRegion";
+			name = "2 - DealWithImage";
 			sourceTree = "<group>";
 		};
 		7F53A0F317262A1800B89A5B = {
@@ -133,7 +133,7 @@
 			children = (
 				7F53A12717262EDF00B89A5B /* resource */,
 				7F53A11717262A1800B89A5B /* MainStoryboard.storyboard */,
-				7F3535E91729050C0085886F /* 2 - ColorRegion */,
+				7F3535E91729050C0085886F /* 2 - DealWithImage */,
 				7F53A12317262E1100B89A5B /* 1 - ColorARGB */,
 				7F53A12217262C8F00B89A5B /* Org */,
 				7F53A10617262A1800B89A5B /* Supporting Files */,

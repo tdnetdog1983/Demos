@@ -1,0 +1,54 @@
+//
+//  CColorARGB.h
+//  MyDemos
+//
+//  Created by Cai Lei on 4/23/13.
+//  Copyright (c) 2013 com.winchannel. All rights reserved.
+//
+
+#ifndef __MyDemos__CColorARGB__
+#define __MyDemos__CColorARGB__
+
+#include <iostream>
+class CColorARGB {
+public:
+    uint8_t _a;
+    uint8_t _r;
+    uint8_t _g;
+    uint8_t _b;
+    
+    CColorARGB();
+    CColorARGB(uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+    ~CColorARGB();
+    CColorARGB(const CColorARGB& rhs);
+    CColorARGB& operator=(const CColorARGB& rhs);
+};
+
+extern CColorARGB pSample[23];
+/**
+ *	@brief threshold 	0 - 255000
+ */
+extern uint compareTwoColors(const CColorARGB& lhs, const CColorARGB& rhs);
+extern bool areTwoColorsSimilar(const CColorARGB& lhs, const CColorARGB& rhs, uint threshold);
+
+extern void initDeltaArray();
+
+#endif /* defined(__MyDemos__CColorARGB__) */
+
+#pragma mark - CColorPoint
+@interface CColorPoint : NSObject
+
+@property (nonatomic, assign) int x;
+@property (nonatomic, assign) int y;
+@property (nonatomic, assign) CColorARGB colorARGB;
+
+@end
+
+#pragma mark - CColorRegion
+@interface CColorRegion : NSObject
+@property (nonatomic, strong) NSMutableArray *colorPointArray;
+
+- (CColorARGB)averageColor;
+- (CColorPoint *)averageColorPoint;
+
+@end

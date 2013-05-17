@@ -8,21 +8,31 @@
 
 #import "CL2ViewController.h"
 
-@interface CL2ViewController ()
+@interface CL2ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end
 
-@implementation CL2ViewController {
-    UIImage *_picImage;
-}
+@implementation CL2ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _picImage = [UIImage imageNamed:@"demo01.jpg"];
 }
 
 - (IBAction)btn1Action:(id)sender {
+    UIImagePickerController *imagePickerVC = [[UIImagePickerController alloc] init];
+    imagePickerVC.delegate = self;
+    imagePickerVC.sourceType = UIImagePickerControllerCameraCaptureModePhoto;
+    [self presentModalViewController:imagePickerVC animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissModalViewControllerAnimated:YES];
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    NSLog(@"%f, %f", image.size.width, image.size.height);
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
 }
 

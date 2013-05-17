@@ -1,0 +1,35 @@
+//
+// Prefix header for all source files of the 'winColorGenius' target in the 'winColorGenius' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#import <DDLog.h>
+extern int ddLogLevel;
+#import <UIColor+Expanded.h>
+#import <UIColor+HSV.h>
+#import <UIImage+FixRotation.h>
+#import <MBProgressHUD.h>
+
+#import <JSONKit.h>
+#import <ASIHTTPRequest.h>
+#import "NSData+ZIP.h"
+#import <NSData+CommonCrypto.h>
+#import "GTMBase64.h"
+#import "NSString+Hash.h"
+
+#import "WCDataPacker.h"
+#import "WCPlistHelper.h"
+#import "CLAppDelegate.h"
+#import "WCGlobalSingleton.h"
+#import "UIDevice+Addition.h"
+#import "UIImageView+WebCache.h"
+#endif
